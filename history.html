@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="history.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>POS App</title>
+  </head>
+  <body>
+    <!-- home -->
+    <header>
+      <div class="container-fluid home">
+        <div class="row text-center">
+          <div class="col-md-1">
+            <div class="menu">
+              <a href="index.html">
+                <img src="img/menu.png" class="menu-icon" />
+              </a>
+            </div>
+          </div>
+          <div class="col-md-11">
+            <div class="top">
+              <p>History</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- sidebar -->
+    <main>
+      <div class="container-fluid sidebar">
+        <div class="row">
+          <div class="col-md-1 text-center">
+            <div class="fork">
+              <a href="home.html">
+                <img src="img/fork.png" />
+              </a>
+            </div>
+            <div class="clipboard">
+              <a href="history.html">
+                <img src="img/clipboard.png" />
+              </a>
+            </div>
+            <div class="add">
+              <img src="img/add.png" />
+            </div>
+          </div>
+          <div class="col-md-11 history">
+            <div class="row income">
+              <div class="col-md-3 left">
+                <h4>Today's Income</h4>
+                <p>Rp. 1.000.000</p>
+                <h4>+2% Yesterday</h4>
+              </div>
+              <div class="col-md-3 mid">
+                <h4>Orders</h4>
+                <p>Rp. 3.270</p>
+                <h4>+5% Last Week</h4>
+              </div>
+              <div class="col-md-3 right">
+                <h4>Today's Income</h4>
+                <p>Rp. 100.000.000.000</p>
+                <h4>+10% Last Year</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-11 chart">
+                <canvas id="line-chart" width="800" height="300"></canvas>
+              </div>
+            </div>
+            <div>
+            <div class="row">
+                <div class="col-md-11 recent">
+                  <h4>Recent Order</h4>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenu2"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Today
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button">
+                        Action
+                      </button>
+                      <button class="dropdown-item" type="button">
+                        Another action
+                      </button>
+                      <button class="dropdown-item" type="button">
+                        Something else here
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row order">
+                <div class="col-md-2">
+                    <p>INVOICES</p>
+                    <hr width="100%">
+                    <h6>#1098</h6>
+                </div>
+                <div class="col-md-2">
+                    <p>Cashier</p>
+                    <hr width="100%">
+                    <h6>Cashier1</h6>
+                </div>
+                <div class="col-md-2">
+                    <p>Date</p>
+                    <hr width="100%">
+                    <h6>06 October 2019</h6>
+                </div>
+                <div class="col-md-2">
+                    <p>ORDERS</p>
+                    <hr width="100%">
+                    <h6>Ice Tea, Salad</h6>
+                </div>
+                <div class="col-md-2">
+                    <p>AMOUNT</p>
+                    <hr width="100%">
+                    <h6>Rp. 120.000</h6>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+      new Chart(document.getElementById("line-chart"), {
+        type: "line",
+        data: {
+          labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+          datasets: [
+            {
+              data: [0, 1500, 2000, 1000, 2800, 2000, 3500, 1000, 2500, 2000],
+              label: "This month",
+              borderColor: "#00F1FF",
+              fill: false,
+            },
+            {
+              data: [1000, 2500, 400, 3800, 2100, 3500, 1000, 1500, 2000, 3000],
+              label: "Last Month",
+              borderColor: "#FFB8C6",
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Revenue",
+          },
+        },
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
